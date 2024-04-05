@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct TP00App: App {
+struct TP00App: App { //应用程序主函数
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView() //先进行初始化，再进入ContentView显示UI
         }
     }
 }
