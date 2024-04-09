@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import MapKit
+
+struct DeviceView: View {
+    @State private var DeviceViewName = ""
+    
+    
+    var body: some View {
+        RoundedRectangle(cornerRadius: 30)
+            .foregroundColor(Color.white)
+            .frame(width: 300, height: 600)
+            .shadow(radius: 4)
+    }
+}
 
 struct HomeView: View {
     var body: some View {
-        Text("首页")
+        
+        
+        TabView {
+            DeviceView()
+            
+        }
+        .tabViewStyle(PageTabViewStyle())
     }
 }
 
@@ -33,30 +52,24 @@ struct ContentView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
-                    Text("首页")
+                    Text("Main")
                 }
                 .tag(0)
             
             MessageView()
                 .tabItem {
-                    Image(systemName: "message")
-                    Text("消息")
+                    Image(systemName: "bolt.horizontal")
+                    Text("Statistics")
                 }
                 .tag(1)
             
             SettingsView()
                 .tabItem {
-                    Image(systemName: "gear")
-                    Text("设置")
+                    Image(systemName: "shift")
+                    Text("UpLoad log")
                 }
                 .tag(2)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
 
